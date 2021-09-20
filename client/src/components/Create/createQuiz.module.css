@@ -1,0 +1,41 @@
+.mainContainer{
+    display: flex;
+}
+
+.container{
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    width: 80%;
+    max-width: 50rem;
+    padding-bottom: 2%;
+}
+
+
+.top{
+    min-height: 15vh;
+    background-color: #74359d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.top p{
+    color:cornsilk;
+    margin:0
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.description{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.topLine{
+    background-color: cyan;
+    height: 10vh;
+}
