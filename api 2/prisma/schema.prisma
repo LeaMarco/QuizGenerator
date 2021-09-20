@@ -1,0 +1,45 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["orderByRelation"]
+}
+
+model Quiz {
+    id          Int      @id @default(autoincrement())
+    name        String
+    description String
+    createdAt   DateTime @default(now())
+
+    questions Question[]
+}
+
+model Question {
+    id   Int    @id @default(autoincrement())
+    text String
+    question_type String
+
+    options Option[]
+    quizId  Int
+    quiz    Quiz         @relation(fields: [quizId], references: [id])
+    // typeId  Int
+    // type    QuestionType @relation(fields: [typeId], references: [id])
+}
+
+model Option {
+    id     Int    @id @default(autoincrement())
+    option String
+
+    questionId Int
+    question   Question @relation(fields: [questionId], references: [id])
+}
+
+// model QuestionType {
+//     id   Int    @id @default(autoincrement())
+//     question_type String
+
+//     questions Question[]
+// }
