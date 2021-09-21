@@ -29,6 +29,10 @@ const CreateQuiz = () => {
     axios.post("http://localhost:3001/create",estado).then(response=>alert(response.data)).catch(e=>alert(e))
   }
 
+  const readyToCreate = ()=>{
+    return estado.questions?.length > 0
+  }
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.container}>
@@ -48,7 +52,7 @@ const CreateQuiz = () => {
             onChange={(e) => dispatch(modifyDescription(e.target.value))}
           />
 
-<div className={styles.amountButton} onClick={() => setOpen(!isOpen)}>
+        <div className={styles.amountButton} onClick={() => setOpen(!isOpen)}>
             <div>{type.length > 2 ? type : "Seleccionar tipo"}</div>
             <div className={styles.arrowContainer}>
               <div className={isOpen ? styles.arrowClose : styles.arrow} />
@@ -65,11 +69,11 @@ const CreateQuiz = () => {
             {types.map(type => <p onClick={() => {setType(`${type}`); setOpen(false)}} key={type}>{type}</p> )}
             
           </div>
-
-          <button onClick={(e) => {e.preventDefault();dispatch(addQuestion(type, "holaaaa"))}}>
+          {type &&
+          <button onClick={(e) => {e.preventDefault();dispatch(addQuestion(type, "Pregunta"))}}>
             agregar pregunta
           </button>
-
+}
           {estado.questions?.length &&
             estado.questions.map((question, index) =>
               question.question_type === "text" ? (
@@ -79,9 +83,9 @@ const CreateQuiz = () => {
               )
             )}
         </form>
-        <button onClick={(e) => {createQuiz(e)}}>
+        {readyToCreate() && <button onClick={(e) => {createQuiz(e)}}>
             Crear encuesta
-        </button>
+        </button>}
       </div>
       <PreviewQuiz />
     </div>

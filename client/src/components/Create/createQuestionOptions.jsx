@@ -28,7 +28,7 @@ const CreateQuestionOptions = ({ data }) => {
       <button
         onClick={(e) => {
           e.preventDefault();
-          dispatch(addOption(data, "soy una opcion"));
+          dispatch(addOption(data, "Opción"));
         }}
       >
         agregar opcion

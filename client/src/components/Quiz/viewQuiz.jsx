@@ -10,14 +10,14 @@ import QuestionText from "./questionText";
 const ViewQuiz = () => {
   const { id } = useParams();
   const [estado, setEstado] = useState("");
-  const detailHero = (id) => {
-    axios
-      .get(`http://localhost:3001/detail/${id}`)
+  const detailQuiz = (id) => {
+    axios.get(`http://localhost:3001/detail/${id}`)
       .then((response) => setEstado(response.data));
   };
+  
   console.log(estado, "ESTADO EN EL DETALLE")
   useEffect(() => {
-    detailHero(id);
+    detailQuiz(id);
     return () => {
       setEstado("");
     };
@@ -33,15 +33,16 @@ const ViewQuiz = () => {
       <div>
         {estado.questions &&
           estado.questions.map((question, index) =>
-            question.type.question_type === "text" ? (
-              <QuestionText data={index} key={index} />
-            ) : question.type.question_type === "multiple" ? (
-              <QuestionMultiple data={index} key={index} />
+            question.question_type === "text" ? (
+              <QuestionText estado={question} key={index} />
+            ) : question.question_type === "multiple" ? (
+              <QuestionMultiple estado={question} key={index} />
             ) : (
-              <QuestionSimple data={index} key={index} />
+              <QuestionSimple estado={question} key={index} />
             )
           )}
       </div>
+      <button className={styles.sendButton} onClick={()=>alert("Respuesta enviada!")}>Enviar</button>
     </div>
   );
 };

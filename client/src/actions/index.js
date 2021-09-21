@@ -25,7 +25,6 @@ import {
 
   
   export function addQuestion(question_type, text) {
-    console.log(question_type, text, "question_type en la action")
     return {
       type: ADD_QUESTION,
       payload:{

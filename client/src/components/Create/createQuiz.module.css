@@ -1,15 +1,16 @@
-.mainContainer{
-    display: flex;
-}
-
 .container{
     min-height: 100vh;
-    background-color: #e0e0e0;
-    width: 80%;
+    width: 50vw;
     max-width: 50rem;
     padding-bottom: 2%;
+    margin: 2% auto;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  7px 7px 28px #d7d7d7,
+             -7px -7px 28px #e9e9e9;
 }
-
+.mainContainer{
+    display:flex
+}
 
 .top{
     min-height: 15vh;
@@ -38,4 +39,25 @@
 .topLine{
     background-color: cyan;
     height: 10vh;
+}
+
+.sendButton{
+  border: none;
+  border-radius: 1rem;
+  margin-top:3%;
+  padding: 0.5rem;
+  font-family: "Roboto";
+  font-weight: 600;
+  background-color: skyblue;
+  color: white;
+  transition: 0.5s;
+  width: 6rem;
+  font-size:1rem
+}
+
+.sendButton:hover{
+  filter: brightness(1.1);
+  cursor:pointer;
+  transform: scale(1.05)
+
 }

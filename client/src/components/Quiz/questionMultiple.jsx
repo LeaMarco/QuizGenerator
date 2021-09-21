@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import styles from "./question.module.css";
+import { useSelector } from "react-redux";
 
-const QuestionMultiple = () => {
+
+const QuestionMultiple = ({estado}) => {
     const [selected, setSelected] = useState([])
-   
     const changeState = (id) =>{
         selected.includes(id) ? setSelected(selected.filter(e=>e!==id)) : setSelected([...selected, id])
     }
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <p>Pregunta Multiple</p>
+        <p>{estado.text}</p>
       </div>
-      <div className={styles.options}> 
-          <span className={selected.includes(1)?styles.selected:styles.unselected} onClick={()=>changeState(1)}>opcion 1</span>
-          <span className={selected.includes(2)?styles.selected:styles.unselected} onClick={()=>changeState(2)}>opcion 2</span>
-          <span className={selected.includes(3)?styles.selected:styles.unselected} onClick={()=>changeState(3)}>opcion 3</span>
+      <div className={styles.options}>
+        <div className={styles.options}>
+          {estado.options?.length &&
+            estado.options.map((option, index) => (
+              <span
+                className={
+                  selected.includes(index) ? styles.selected : styles.unselected
+                }
+                onClick={() => changeState(index)}
+              >
+                {option.option}
+              </span>
+            ))}
+        </div>
       </div>
     </div>
   );

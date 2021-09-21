@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styles from "./question.module.css";
 
-const QuestionText = () => {
+const QuestionText = ({estado}) => {
     const [answer, setAnswer] = useState("")
    
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <p>Pregunta Text</p>
+        <p>{estado.text}</p>
       </div>
-      <textarea onChange={()=>setAnswer()}/>
+      <textarea />
     </div>
   );
 };
