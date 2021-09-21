@@ -1,10 +1,27 @@
-# QuizGenerator
-## Available Scripts
-1: Generar base de datos:
-    Ejecutar los siguientes comandos estando en la carpeta /api
-    npx prisma db push
-    npx prisma generate
-2: Instalar dependencias en /api y /client:
-    npm i
-3: Iniciar ambos servidores:
-    npm start
+# Quiz Generator
+
+App to create quizzes and exams
+
+## Installation
+
+First generate the db, with the following commands (locate in /api to do it)
+
+```bash
+npx prisma db push
+```
+
+```bash
+npx prisma generate
+```
+
+And then install the dependencies in both servers (/api and /client) using:
+
+```bash
+npx prisma generate
+```
+
+## Usage
+In order to start the project, run this command in both servers:
+```bash
+npmstart
+```
