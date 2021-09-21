@@ -14,8 +14,8 @@ const PreviewQuiz = () => {
         Vista previa
       </span>
       <div className={styles.top}>
-        <p className={styles.title}>{estado.name}</p>
-        <p className={styles.description}>{estado.description}</p>
+        <p className={styles.title}>{estado.name ? estado.name : "Nombre de la encuesta"}</p>
+        <p className={styles.description}>{estado.description ? estado.description : "Descripción de la encuesta"}</p>
       </div>
       <div>
         {estado.questions &&

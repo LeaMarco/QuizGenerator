@@ -9,7 +9,7 @@ const CreateQuestionText = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <p>{estado.text}</p>
+        <p>{estado.text.length ? estado.text : "Ingresar pregunta"}</p>
       </div>
       <textarea />
     </div>

@@ -71,7 +71,7 @@ const CreateQuestionOptions = ({ data }) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                dispatch(addOption(data, "Opción"));
+                dispatch(addOption(data, ""));
               }}
               className={styles.Button}
             >

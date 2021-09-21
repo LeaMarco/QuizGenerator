@@ -10,8 +10,8 @@ import {
 } from "../actions/actionNames";
 
 const initialState = {
-  name: "Nombre de la encuesta",
-  description: "Descripción de la encuesta",
+  name: "",
+  description: "",
 };
 
 

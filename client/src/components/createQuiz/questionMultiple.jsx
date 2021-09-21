@@ -14,7 +14,7 @@ const QuestionMultiple = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <p>{estado.text}</p>
+        <p>{estado.text.length ? estado.text : "Ingresar pregunta"}</p>
       </div>
       <div className={styles.options}>
         <div className={styles.options}>
@@ -26,7 +26,7 @@ const QuestionMultiple = ({ data }) => {
                 }
                 onClick={() => changeState(index)}
               >
-                {option}
+                {option.length ? option : "Ingresar una opción"}
               </span>
             ))}
         </div>

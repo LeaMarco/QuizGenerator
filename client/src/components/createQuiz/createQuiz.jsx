@@ -16,6 +16,7 @@ import PreviewQuiz from "./previewQuiz";
 import CreateQuestionText from "./createQuestionText";
 import CreateQuestionOptions from "./createQuestionOptions";
 import axios from "axios";
+import { readyToCreate } from "../../utils";
 
 const CreateQuiz = () => {
   const dispatch = useDispatch();
@@ -32,9 +33,7 @@ const CreateQuiz = () => {
       .catch((e) => alert(e));
   };
 
-  const readyToCreate = () => {
-    return estado.questions?.length > 0;
-  };
+  
 
   return (
     <div className={styles.mainContainer}>
@@ -107,7 +106,7 @@ const CreateQuiz = () => {
                 className={styles.Button}
                 onClick={(e) => {
                   e.preventDefault();
-                  dispatch(addQuestion(type, "Pregunta"));
+                  dispatch(addQuestion(type, ""));
                 }}
               >
                 agregar pregunta
@@ -122,11 +121,11 @@ const CreateQuiz = () => {
             )}
           </div>
 
-          {readyToCreate() && (
+          {!readyToCreate(estado).length? (
             <button type="submit" className={styles.Button}>
               Crear encuesta
             </button>
-          )}
+          ) : readyToCreate(estado).map(error => <p>{error}</p>)}
         </form>
       </div>
       <PreviewQuiz />

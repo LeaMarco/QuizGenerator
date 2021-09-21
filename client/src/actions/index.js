@@ -41,7 +41,7 @@ import {
           payload:{
             question_type,
             text,
-            options:["Opción", "Opción"]
+            options:["", ""]
           },
         };
     }
