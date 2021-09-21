@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.logo{
+    margin-top: 2vh;
+    font-family: "Anton";
+    font-size: 3rem;
+    color:cornflowerblue;
+    text-decoration-line: underline ;
+}
+
+.logo:hover{
+    filter: brightness(1.1);
+}
+

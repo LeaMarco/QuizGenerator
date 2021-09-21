@@ -11,7 +11,7 @@ const Home = () => {
         <Link to="./create">
             <button className={styles.Button} >Crear encuesta</button>
         </Link>
-        <p>Encuestas creadas:</p>
+        <p className={styles.subTitle}>Encuestas creadas:</p>
         <List />
     </div>
   );
