@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "./question.module.css";
+import React from "react";
+import styles from "../preview/question.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addOption,
@@ -7,9 +7,9 @@ import {
   deleteQuestion,
   modifyOption,
   modifyQuestion,
-} from "../../actions";
-import menos from "../../images/menos.svg";
-import eliminar from "../../images/eliminar.svg";
+} from "../../../actions";
+import menos from "../../../images/menos.svg";
+import eliminar from "../../../images/eliminar.svg";
 
 
 const CreateQuestionOptions = ({ data }) => {

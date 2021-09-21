@@ -11,7 +11,7 @@ const QuestionSimple = ({estado}) => {
       </div>
       <div className={styles.options}> 
           {estado.options?.length && estado.options.map((option, index) => 
-            <span className={selected.includes(index)?styles.selected:styles.unselected} onClick={()=>setSelected([index])}>{option.option}</span>
+            <span key={index} className={selected.includes(index)?styles.selected:styles.unselected} onClick={()=>setSelected([index])}>{option.option}</span>
             )}
       </div>
     </div>

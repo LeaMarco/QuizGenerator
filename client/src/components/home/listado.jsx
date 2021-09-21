@@ -23,8 +23,8 @@ const List = () => {
   return (
     <div className={styles.container}>
       <span className={styles.topLine} />
-      {estado.length ? estado.map(quiz=>
-        <div className={styles.top}>
+      {estado.length ? estado.map((quiz, index)=>
+        <div className={styles.top} key={index}>
           <div className={styles.info}>
             <p className={styles.title}>{quiz.name}</p>
             <p className={styles.description}>{quiz.description}</p>

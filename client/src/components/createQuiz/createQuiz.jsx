@@ -1,20 +1,15 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
 import {
-  addOption,
   addQuestion,
-  deleteOption,
-  deleteQuestion,
   modifyDescription,
-  modifyOption,
-  modifyQuestion,
   modifyTitle,
 } from "../../actions";
 import styles from "./createQuiz.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import PreviewQuiz from "./previewQuiz";
-import CreateQuestionText from "./createQuestionText";
-import CreateQuestionOptions from "./createQuestionOptions";
+import PreviewQuiz from "./preview/previewQuiz";
+import CreateQuestionText from "./create/createQuestionText";
+import CreateQuestionOptions from "./create/createQuestionOptions";
 import axios from "axios";
 import { readyToCreate } from "../../utils";
 
@@ -27,6 +22,7 @@ const CreateQuiz = () => {
 
   const createQuiz = (e) => {
     e.preventDefault();
+    !readyToCreate(estado).length &&
     axios
       .post("http://localhost:3001/create", estado)
       .then((response) => alert(response.data))
@@ -125,7 +121,7 @@ const CreateQuiz = () => {
             <button type="submit" className={styles.Button}>
               Crear encuesta
             </button>
-          ) : readyToCreate(estado).map(error => <p>{error}</p>)}
+          ) : readyToCreate(estado).map(error => <p style={{color:"IndianRed"}}>*{error}</p>)}
         </form>
       </div>
       <PreviewQuiz />

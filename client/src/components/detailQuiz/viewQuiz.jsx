@@ -15,7 +15,6 @@ const ViewQuiz = () => {
       .then((response) => setEstado(response.data));
   };
   
-  console.log(estado, "ESTADO EN EL DETALLE")
   useEffect(() => {
     detailQuiz(id);
     return () => {

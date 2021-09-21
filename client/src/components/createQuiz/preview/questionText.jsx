@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./question.module.css";
 import { useSelector } from "react-redux";
 
 const CreateQuestionText = ({ data }) => {
-  const [answer, setAnswer] = useState("");
   let estado = useSelector((state) => state.questions[data]);
 
   return (

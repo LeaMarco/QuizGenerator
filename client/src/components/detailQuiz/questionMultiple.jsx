@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./question.module.css";
-import { useSelector } from "react-redux";
 
 
 const QuestionMultiple = ({estado}) => {
@@ -18,6 +17,7 @@ const QuestionMultiple = ({estado}) => {
           {estado.options?.length &&
             estado.options.map((option, index) => (
               <span
+              key={index}
                 className={
                   selected.includes(index) ? styles.selected : styles.unselected
                 }

@@ -5,9 +5,7 @@ const router = Router();
 const prisma = new PrismaClient();
 
 router.get("/:id", async (req: Request, res: Response) => {
-  console.log(parseInt(req.params.id));
   let id = parseInt(req.params.id);
-  // let quiz= console.log("jola")
   let quiz = await prisma.quiz.findUnique({
     where: {
       id: id,

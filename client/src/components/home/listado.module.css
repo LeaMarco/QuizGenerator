@@ -93,3 +93,15 @@
 .container::-webkit-scrollbar-track {
     border-radius: 1rem;  
 }
+
+@media all and (max-width: 700px){
+    
+    .top{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .Button{
+        margin-bottom: 1vh;
+    }
+}

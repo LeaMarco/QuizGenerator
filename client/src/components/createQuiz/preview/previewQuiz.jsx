@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./createQuiz.module.css";
+import styles from "../createQuiz.module.css";
 import QuestionMultiple from "./questionMultiple";
 import QuestionSimple from "./questionSimple";
 import QuestionText from "./questionText";
@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 
 const PreviewQuiz = () => {
   let estado = useSelector((state) => state);
-  console.log(estado, "ESTADOO");
   return (
     <div className={styles.container}>
       <span className={styles.previewLabel}>

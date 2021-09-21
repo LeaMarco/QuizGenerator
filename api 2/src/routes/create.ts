@@ -20,7 +20,6 @@ interface Question{
 
 router.post("/", async (req: Request, res: Response) => {
    let dataFront:Quiz= req.body
-    console.log(dataFront)
   let quiz:any = await prisma.quiz.create({
     data: {
         name: dataFront.name,
@@ -34,7 +33,6 @@ router.post("/", async (req: Request, res: Response) => {
       },
   })
   .then(async res=> {
-      console.log(res.id)
       let post = await prisma.quiz.findUnique({where: {id: res.id}, select:{questions:{select:{id:true}}}})
        post?.questions.map(async (question, index)=> { dataFront.questions[index].options &&
           dataFront.questions[index].options.map(async option =>{ 

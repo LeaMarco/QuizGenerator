@@ -12,6 +12,7 @@ import {
 const initialState = {
   name: "",
   description: "",
+  questions: []
 };
 
 
@@ -30,9 +31,6 @@ export default (state = initialState, action) => {
       };
     }
     case ADD_QUESTION: {
-    console.log(action.payload.tipo, "tipo en el reducer")
-
-      if(!state.questions) state.questions = [] 
       return { 
         ...state,
         questions: state.questions.concat(action.payload),

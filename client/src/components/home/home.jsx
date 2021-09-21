@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./home.module.css";
-import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import List from "./listado";
 
 const Home = () => {
-  const [estado, setEstado] = useState("");
-  const quizList = () => {
-    axios
-      .get(`http://localhost:3001/list/`)
-      .then((response) => setEstado(response.data));
-  };
-
-  useEffect(() => {
-    quizList();
-    return () => {
-      setEstado("");
-    };
-  }, []);
 
   return (
     <div className={styles.container}>

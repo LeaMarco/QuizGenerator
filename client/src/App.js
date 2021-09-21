@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CreateQuiz from './components/createQuiz/createQuiz';
 import ViewQuiz from './components/detailQuiz/viewQuiz';

@@ -1,9 +1,10 @@
 .container{
     font-family: "Roboto";
-    height: 80vh;
+    height: auto;
     width: 80%;
     max-width: 50rem;
     margin: 5vh auto;
+    padding-bottom: 5vh;
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
     box-shadow:  7px 7px 28px #d7d7d7,
              -7px -7px 28px hsl(0, 0%, 91%);
@@ -41,4 +42,11 @@
   cursor:pointer;
   transform: scale(1.05)
 
+}
+
+
+@media all and (max-width: 700px){
+  .container{
+    width: 90vw;
+  }
 }

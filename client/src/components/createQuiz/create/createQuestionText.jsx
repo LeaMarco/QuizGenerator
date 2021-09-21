@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteQuestion, modifyQuestion } from "../../actions";
-import styles from "./question.module.css";
-import eliminar from "../../images/eliminar.svg";
+import { deleteQuestion, modifyQuestion } from "../../../actions";
+import styles from "../preview/question.module.css";
+import eliminar from "../../../images/eliminar.svg";
 
 
 const CreateQuestionText = ({ data }) => {
