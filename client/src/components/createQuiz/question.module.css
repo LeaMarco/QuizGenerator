@@ -1,0 +1,123 @@
+.container{
+    margin-top: 3%;
+    background-color: darkgrey;
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: .5rem;
+}
+
+.container p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.deleteButtonContainer{
+    width: 97%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.selected{
+    background-color: rgb(198, 138, 255);
+}
+
+.unselected{
+    background-color: rgb(255, 255, 255);
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%
+}
+
+.options span{
+    font-weight: 500;
+    width: 90%;
+    padding: 0.8rem;
+    margin-top: 3%;
+    border-radius: 0.5rem;
+    transition: 0.5s
+}
+
+.options span:hover{
+    cursor:pointer;
+    background-color: rgb(198, 138, 255);
+    transform: scale(1.03)
+}
+
+.container textarea{
+    font-size:1rem;
+    resize: none;
+    border:none;
+    height: 8vh;   
+    border-radius: 0.5rem;
+    width: 84%;
+    padding: 3%
+}
+
+.container textarea:focus{
+    outline: none
+}
+
+.optionContainer{
+    width: 80%;
+}
+.optionEditContainer{
+    display: flex;
+}
+
+.optionEditContainer input{
+    width: 90%;
+}
+
+.options p{
+    margin:0;
+    width: 80%;
+    margin-top: 3%;
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: start;
+}
+
+
+.Button{
+    border: none;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-family: "Roboto";
+    font-weight: 400;
+    background-color: rgb(136, 219, 103);
+    color: white;
+    transition: 0.5s;
+    font-size:0.9rem
+  }
+  
+  .Button:hover{
+    filter: brightness(1.05);
+    cursor:pointer;
+    transform: scale(1.01)
+  }
+  
+  .ButtonContainer{
+      margin-top: 2%;
+      width: 75%;
+    display: flex;
+  }
+
+  .deleteOptionButton{
+    width: 1.5rem;
+    margin-left: 3%;
+  }
+  
+  .deleteOptionButton:hover{
+    filter: brightness(1.05);
+    cursor:pointer;
+    transform: scale(1.03)
+  }
+

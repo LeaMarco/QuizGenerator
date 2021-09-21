@@ -10,7 +10,9 @@ const PreviewQuiz = () => {
   console.log(estado, "ESTADOO");
   return (
     <div className={styles.container}>
-      <span className={styles.topLine} />
+      <span className={styles.previewLabel}>
+        Vista previa
+      </span>
       <div className={styles.top}>
         <p className={styles.title}>{estado.name}</p>
         <p className={styles.description}>{estado.description}</p>

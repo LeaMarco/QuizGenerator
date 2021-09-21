@@ -25,13 +25,27 @@ import {
 
   
   export function addQuestion(question_type, text) {
-    return {
-      type: ADD_QUESTION,
-      payload:{
-        question_type,
-        text
-      },
-    };
+    switch (question_type) {
+      case "text":
+        return {
+          type: ADD_QUESTION,
+          payload:{
+            question_type,
+            text
+          },
+        };
+        
+      default:
+        return {
+          type: ADD_QUESTION,
+          payload:{
+            question_type,
+            text,
+            options:["Opción", "Opción"]
+          },
+        };
+    }
+   
   }
 
   export function addOption(questionId,option) {
