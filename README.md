@@ -23,5 +23,5 @@ npx prisma generate
 ## Usage
 In order to start the project, run this command in both servers:
 ```bash
-npmstart
+npm start
 ```
