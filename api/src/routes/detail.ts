@@ -29,7 +29,7 @@ router.get("/:id", async (req: Request, res: Response) => {
     },
   });
 
-  res.send(quiz);
+  res.status(200).send(quiz);
 });
 
 
