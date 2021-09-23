@@ -18,28 +18,27 @@ interface Question {
 
 router.post("/", async (req: Request, res: Response) => {
   let dataFront: Quiz = req.body;
-  try{
-  let quiz = await prisma.quiz.create({
-    data: {
-      name: dataFront.name,
-      description: dataFront.description,
-      questions: {
-        createMany: {
-          data: dataFront.questions.map((question) => ({
-            text: question.text,
-            question_type: question.question_type,
-          })),
+  try {
+    let quiz = await prisma.quiz.create({
+      data: {
+        name: dataFront.name,
+        description: dataFront.description,
+        questions: {
+          createMany: {
+            data: dataFront.questions.map((question) => ({
+              text: question.text,
+              question_type: question.question_type,
+            })),
+          },
         },
       },
-    },
-  });
+    });
 
-  let post = await prisma.quiz.findUnique({
-    where: { id: quiz.id },
-    select: { questions: { select: { id: true } } },
-  });
-  post?.questions
-    .map((question, index) => {
+    let post = await prisma.quiz.findUnique({
+      where: { id: quiz.id },
+      select: { questions: { select: { id: true } } },
+    });
+    post?.questions.map((question, index) => {
       dataFront.questions[index].options &&
         dataFront.questions[index].options.map(async (option) => {
           await prisma.option.create({
@@ -49,12 +48,11 @@ router.post("/", async (req: Request, res: Response) => {
             },
           });
         });
-    })
+    });
     res.status(200).send(`${quiz.id}`);
+  } catch (error) {
+    res.status(500).send(error);
   }
-    catch(error) {res.status(500).send(error)}
-    finally{
-    }
 });
 
 export default router;
